@@ -23,7 +23,15 @@ app.use(
 
 // IMPORTING MONGOOSE STUFF
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+
+// Import .env file only in development environment
+if(process.env.NODE_ENV !== 'production') {
+
+  const dotenv = require('dotenv');
+  dotenv.config();
+
+}
+
 
 
 
@@ -35,7 +43,6 @@ const afterLoginRouter = require('./routes/afterLoginRoutes');
 
 
 // Connect to DB
-dotenv.config();
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
   if (err) return console.log(err);
