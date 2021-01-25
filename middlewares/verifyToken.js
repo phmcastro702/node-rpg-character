@@ -25,7 +25,8 @@ const verifyRefreshToken = (req, res, next) => {
     const token = req.cookies.jid;
     if (!token) {
         res.status(401);
-        console.log('Access Denied, please login again(credentials may have expired)'); 
+        console.log('Access Denied, please login again(credentials may have expired)');
+        res.clearCookie('jid');
         return res.redirect('/'); 
     }
 

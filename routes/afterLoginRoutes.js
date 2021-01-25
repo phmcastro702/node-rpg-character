@@ -13,16 +13,26 @@ router.get('/index', verifyRefreshToken, async (req, res) => {
         return res.redirect('/');
     }
 
-    let currentUser = await User.findById(req.user._id, '-_id username');
-    // try anon users collection
-    if (!currentUser) {
+    let currentUser;
+    if (req.user.loginType === 'anon') {
         currentUser = await AnonUser.findById(req.user._id, '-_id username');
+
     }
+    else {
+        currentUser = await User.findById(req.user._id, '-_id username');
+    }
+
+    
+    // try anon users collection
 
     try {
         res.render('users/index', { data: { greetMessage: `Welcome, ${currentUser.username}` } });
     } catch (err) {
-        res.status(500).send('failed to load index page');
+        res.status(500);
+
+        res.clearCookie('jid');
+        console.log('failed to load index page, try logging in again');
+        res.redirect('/');
     }
 
 });
