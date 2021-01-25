@@ -7,7 +7,7 @@
 // IMPORTING EXPRESS STUFF
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -16,7 +16,7 @@ const cors = require('cors');
 
 app.use(
   cors({
-    origin: `http://localhost:${port}`,
+    origin: `http://localhost:${PORT}`,
     credentials: true
   })
 );
@@ -86,4 +86,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(process.env.port || port, () => console.log(`Server listening on http://localhost:${port}`));
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
