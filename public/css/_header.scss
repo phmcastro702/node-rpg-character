@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+$header-primary-color: white;
+$header-secondary-color: yellowgreen;
+// 20px: padding TOP and BOTTOM | 30px: padding RIGHT and LEFT
+$header-padding: 10px 30px;
+
+body {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+}
+
+header {
+    background-color: $header-secondary-color;
+    color: black;
+    padding: $header-padding;
+
+    #page-header {
+        color: $header-primary-color;
+        text-decoration: none;
+        width: 49%;
+        display: inline-block;
+        img {
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+            &:hover {
+                width: 150px;
+                border-radius: 25%;
+                transition: 0.3s ease all;
+            }
+        }
+    }
+
+    #main-navigation {
+        width: 49%;
+        display: inline-block;
+        text-align: right;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            height: 100%;
+            li {
+                display: inline-block;
+                background-color: rgba(0, 0, 0, 0.568);
+                height: 100%;
+                padding: 15px 10px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    padding: 15px 10px;
+                    
+                }
+                &:hover {
+                    background-color: black;
+                    border-radius: 3px;
+                    transition: 0.3s ease all;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+}

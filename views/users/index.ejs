@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Character Manager</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>RPG Character Creator</h1>
+
+
+        <h4 id="page-header">
+            <img src="/img/horse.png" alt="go horsie" class="profile-avatar">
+            <%= data.greetMessage %>
+        </h4>
+
+        <nav id="main-navigation">
+            <ul>
+                <li><a href="/in/show">Saved Characters</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <h2>Start creating your character:</h2>
+
+        <div class="form-style-5">
+            <form action="/in/show" method="POST" autocomplete="off">
+                <fieldset>
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Battlefield Name" name="battlefieldName">
+                </fieldset>
+
+                <fieldset>
+                    <select name="race" id="race-opts">
+                        <option disabled="disabled" selected="selected" hidden="hidden">Select Race</option>
+                        <optgroup id="races" label="DnD Races">
+                        </optgroup>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <select name="class" id="class-opts">
+                        <option disabled="disabled" selected="selected" hidden="hidden">Select Class</option>
+                        <optgroup id="classes" label="DnD Classes">
+                        </optgroup>
+                    </select>
+                </fieldset>
+
+
+                <input type="submit" value="Create new character" id="characterInitSubmit">
+            </form>
+
+
+            <!-- <form id="optsForm" class="character-form">
+                
+            </form> -->
+
+
+
+        </div>
+    </main>
+
+
+    <script src="/js/populateOpts.js"></script>
+
+</body>
+
+</html>

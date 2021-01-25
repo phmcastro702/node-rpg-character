@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/welcomeStyle.css">
+    <title>Welcome!</title>
+</head>
+
+<body>
+    <header>
+        <h1>RPG Character Creator</h1>
+    </header>
+
+    <main>
+        <div class="login-wrapper">
+            <form action="/signin" method="POST">
+                <div class="login-header">
+                    <img src="/img/horse.png" alt="go horsie" class="img-avatar">
+                    <h1>Login</h1>
+                </div>
+
+                <fieldset>
+                    <div class="input-group">
+                        <input type="text" name="email" id="userEmail" required>
+                        <label for="userEmail">Email or Username</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" id="userPassword" required>
+                        <label for="userPassword">Password</label>
+                        <p>
+                            <%= data.loginErrorMessage %>
+                        </p>
+                    </div>
+
+
+
+                    <!-- <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="passwordConf" placeholder="Confirm Password"> -->
+                    <div class="checkbox-div">
+                        <label>
+                            <input type="checkbox" name="rememberMe">
+                            Remember me
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit" class="submit-btn">Sign in</button>
+                    <a href="#anon-signup">
+                        <button type="button" class="submit-btn">Sign in without an account!</button>
+                    </a>
+                </div>
+
+
+                <a href="#signup" class="signup">First-timer? Sign up here!</a>
+            </form>
+
+            <div id="signup">
+                <form action="/signup" class="signup-form" method="POST">
+                    <a href="#" class="close">&times;</a>
+                    <h2>Sign me up!</h2>
+                    <div class="input-group">
+                        <input type="text" name="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="username" id="username" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" id="newUserPassword" required>
+                        <label for="newUserPassword">Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="newUserPasswordConf" required>
+                        <label for="newUserPasswordConf">Confirm Password</label>
+                    </div>
+                    <input type="submit" value="Sign up" class="submit-btn">
+                </form>
+            </div>
+
+            <div id="anon-signup">
+                <form action="/anonsignup" class="signup-form" method="POST">
+                    <a href="#" class="close">&times;</a>
+                    <h2>No need for credentials, m'user!</h2>
+                    <p>Be wary! All your info will expire in 1(one) day!</p>
+                    <br>
+                    <div class="input-group">
+                        <input type="text" name="username" id="anon-username" placeholder="Not required, but cool">
+                        <label for="username">Epic Username</label>
+                    </div>
+                    
+                    <input type="submit" value="Sign in" class="submit-btn">
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <span>
+            A-Goo
+            <br>
+            &copy;
+            2021
+        </span>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>Profile Created!</h2>
+
+    <br>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Email</td>
+                <td>UserName</td>
+                <td>Password</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((details) => { %>
+                <tr>
+                    <td><%= details.email %></td>
+                    <td><%= details.username %></td>
+                    <td><%= details.password %></td>
+                </tr>
+                <% }) %> 
+        </tbody>
+        <button><a href="/">Back</a></button>
+
+    </table>
+</body>
+</html>

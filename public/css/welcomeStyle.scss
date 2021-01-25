@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$hTag-color: rgb(141, 80, 0);
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: 'Press Start 2P', cursive, sans-serif;
+}
+
+header {
+    background-color: yellowgreen;
+    color: $hTag-color;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    padding: 5px 15px;
+    text-align: left;
+    font-size: .5rem;
+
+    h1 {
+        margin: 10px 0;
+    }
+
+    nav {
+        background-color: yellowgreen;
+        width: max-content;
+    }
+}
+
+footer {
+    background-color: $hTag-color;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+
+    background: url('/img/loginBG.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 1000px;
+
+    .login-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        
+    }
+
+    .login-header {
+        display: inline-flex;
+    }
+    
+    .img-avatar {
+        width: 80px;
+        margin-top: 0;
+        vertical-align: middle;
+        margin-right: 40px;
+        margin-bottom: 20px;
+        pointer-events: none;
+    }
+
+    form {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        padding: 40px 40px 40px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+
+        transition: .3s ease-in-out;
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        h1 {
+            letter-spacing: 1px;
+        }
+        fieldset {
+            outline: none;
+            border: none;
+        }
+
+        .checkbox-div {
+            margin-top: 0;
+            margin-bottom: 40px;
+            label {
+                color: inherit;
+            }
+        }
+
+        p {
+            text-align: left;
+            font-size: x-small;
+            color: rgb(187, 0, 0);
+        }
+    }
+
+    .input-group {
+        position: relative;
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: .3s ease-out;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            background-color: transparent;
+            color: inherit;
+
+            &:focus + label,
+            &:valid + label {
+                transform: translateY(-18px);
+                color: $hTag-color;
+                font-size: .8rem;
+            }
+        }
+        
+    }
+
+    .submit-btn {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border: none;
+        outline: none;
+        background: $hTag-color;
+        font-family: 'Press Start 2P', cursive, sans-serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        &:hover {
+            background: rgb(209, 209, 209);
+        }
+        cursor: pointer;
+        
+    }
+
+    .signup {
+        color: inherit;
+        font-size: .6rem;
+    }
+
+    #signup, #anon-signup {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        z-index: 1;
+        background: white;
+        opacity: 0;
+        transition: .6s;
+        pointer-events: none;
+    }
+
+    .signup-form {
+        h2 {
+            margin: 40px 10px;
+        }
+    }
+
+    #signup:target {
+        height: 100vh;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    #anon-signup:target {
+        height: 100vh;
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+}

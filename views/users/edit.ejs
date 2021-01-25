@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Library</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h2>Edit character:</h2>
+
+    <br>
+    <% data.characterLibrary.forEach((details)=> { %>
+        <form action="/in/edit?id=<%= details._id %>" method="POST">
+            <div>
+                <input type="text" value="<%= details.name %>" name="name" id="name">
+                <label for="name">Character Name</label>
+            </div>
+            <div>
+                <input type="text" value="<%= details.battlefieldName %>" name="battlefieldName" id="bName">
+                <label for="bName">Character Battlefield Name</label>
+            </div>
+            <div>
+                <input type="text" value="<%= details.race %>" name="race" id="race">
+                <label for="race">Character Race</label>
+            </div>
+            <div>
+                <input type="text" value="<%= details.class %>" name="class" id="class">
+                <label for="class">Character Class</label>
+            </div>
+
+            <br>
+
+            <button><a href="/in/show">Back</a></button>
+            <button type="submit">Confirm Edit</button>
+        </form>
+        <% }) %>
+
+</body>
+
+</html>

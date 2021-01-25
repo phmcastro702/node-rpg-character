@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+}
+
+header {
+  background-color: yellowgreen;
+  color: #8d5000;
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  padding: 5px 15px;
+  text-align: left;
+  font-size: .5rem;
+}
+
+header h1 {
+  margin: 10px 0;
+}
+
+header nav {
+  background-color: yellowgreen;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+footer {
+  background-color: #8d5000;
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  background: url("/img/loginBG.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 1000px;
+}
+
+main .login-wrapper {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 15px;
+}
+
+main .login-header {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+main .img-avatar {
+  width: 80px;
+  margin-top: 0;
+  vertical-align: middle;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+main form {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 40px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  color: black;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+main form:hover {
+  background: white;
+}
+
+main form h1 {
+  letter-spacing: 1px;
+}
+
+main form fieldset {
+  outline: none;
+  border: none;
+}
+
+main form .checkbox-div {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+main form .checkbox-div label {
+  color: inherit;
+}
+
+main form p {
+  text-align: left;
+  font-size: x-small;
+  color: #bb0000;
+}
+
+main .input-group {
+  position: relative;
+}
+
+main .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+  pointer-events: none;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+main .input-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+main .input-group input:focus + label,
+main .input-group input:valid + label {
+  -webkit-transform: translateY(-18px);
+          transform: translateY(-18px);
+  color: #8d5000;
+  font-size: .8rem;
+}
+
+main .submit-btn {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background: #8d5000;
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main .submit-btn:hover {
+  background: #d1d1d1;
+}
+
+main .signup {
+  color: inherit;
+  font-size: .6rem;
+}
+
+main #signup, main #anon-signup {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: white;
+  opacity: 0;
+  -webkit-transition: .6s;
+  transition: .6s;
+  pointer-events: none;
+}
+
+main .signup-form h2 {
+  margin: 40px 10px;
+}
+
+main #signup:target {
+  height: 100vh;
+  opacity: 1;
+  pointer-events: all;
+}
+
+main #anon-signup:target {
+  height: 100vh;
+  opacity: 1;
+  pointer-events: all;
+}
+/*# sourceMappingURL=welcomeStyle.css.map */

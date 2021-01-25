@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Library</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h2>
+        <%= data.title %>
+    </h2>
+
+    <br>
+
+    <table border="1" class="center">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Battlefield Name</td>
+                <td>Race</td>
+                <td>Class</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.characterLibrary.forEach((details)=> { %>
+                <tr>
+                    <td>
+                        <%= details.name %>
+                    </td>
+                    <td>
+                        <%= details.battlefieldName %>
+                    </td>
+                    <td>
+                        <%= details.race %>
+                    </td>
+                    <td>
+                        <%= details.class %>
+                    </td>
+                    <td><a href="/in/edit?id=<%= details._id %>">Edit</a> - <a href="/in/delete?id=<%= details._id %>">Delete</a></td>
+                </tr>
+                <% }) %>
+        </tbody>
+        <button><a href="/in/index">Back</a></button>
+
+    </table>
+
+    <script>
+        //TODO refresh page after delete ajax call
+        function sendDelete(event, ref) {
+            event.preventDefault();
+            console.log(ref);
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("DELETE", ref, true);
+            xhttp.onloadend = function (ev) {
+                window.location.reload();
+            };
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
