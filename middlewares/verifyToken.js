@@ -23,7 +23,11 @@ const verifyAccessToken = (req, res, next) => {
 
 const verifyRefreshToken = (req, res, next) => {
     const token = req.cookies.jid;
-    if (!token) return res.status(401).send('Access Denied');
+    if (!token) {
+        res.status(401);
+        console.log('Access Denied, please login again(credentials may have expired)'); 
+        return res.redirect('/'); 
+    }
 
     try {
         const verified = jwt.verify(

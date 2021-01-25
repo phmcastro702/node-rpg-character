@@ -27,7 +27,7 @@ const rpgCharacterSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        expires: '1d'
+        expires: '24h'
     }
 });
 
